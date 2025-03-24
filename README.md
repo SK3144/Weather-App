@@ -9,7 +9,7 @@ A simple weather dashboard that fetches real-time weather data from OpenWeather 
 ✔ Responsive and user-friendly UI  
 
 ## Live Demo
-[View on Netlify](https://your-netlify-url.netlify.app/) (Update with your deployment link)
+[View on Netlify][![Netlify Status](https://api.netlify.com/api/v1/badges/b8395139-c512-4c6d-a13d-1b8a9e5f12a4/deploy-status)](https://app.netlify.com/sites/jocular-yeot-7cc33e/deploys)(Update with your deployment link)
 
 ## How to Run Locally
 1. Clone this repository:
