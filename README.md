@@ -13,3 +13,12 @@ A simple weather dashboard that fetches real-time weather data from OpenWeather 
 
 ## How to Run Locally
 1. Clone this repository:
+2. Open `index.html` in a browser.
+
+## API Key Setup
+1. Get a free API key from [OpenWeather](https://openweathermap.org/api).
+2. Replace `YOUR_OPENWEATHER_API_KEY` in `script.js` with your API key.
+
+## Deployment
+This project can be deployed on Netlify, Render, or Railway.
+
