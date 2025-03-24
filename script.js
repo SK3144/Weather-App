@@ -1,37 +1,62 @@
-const apiKey = "YOUR_OPENWEATHER_API_KEY";
-
-async function getWeather() {
-    const city = document.getElementById("city-input").value;
-    if (!city) {
-        alert("Please enter a city name");
-        return;
-    }
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("City not found");
-
-        const data = await response.json();
-        displayWeather(data);
-    } catch (error) {
-        document.getElementById("weather-info").innerHTML = `<p style="color:red;">${error.message}</p>`;
-    }
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-function displayWeather(data) {
-    const { name, main, weather } = data;
-    const temp = main.temp;
-    const humidity = main.humidity;
-    const description = weather[0].description;
-    const icon = `http://openweathermap.org/img/wn/${weather[0].icon}.png`;
+.container {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-    document.getElementById("weather-info").innerHTML = `
-        <h2>${name}</h2>
-        <img src="${icon}" alt="Weather icon">
-        <p>Temperature: ${temp}°C</p>
-        <p>Humidity: ${humidity}%</p>
-        <p>${description}</p>
-    `;
+h1 {
+    font-size: 26px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #ff9900;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #ff6600;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.weather-card img {
+    width: 80px;
+}
+
+p {
+    font-size: 18px;
 }
